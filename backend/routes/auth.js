@@ -113,7 +113,8 @@ router.post('/login', async (req, res) => {
     });
   } catch (err) {
     console.error('Error login:', err);
-    res.status(500).json({ error: 'Terjadi kesalahan pada server saat login' });
+    const detailMsg = err.message ? `: ${err.message}` : '';
+    res.status(500).json({ error: `Terjadi kesalahan pada server saat login${detailMsg}` });
   }
 });
 
