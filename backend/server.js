@@ -96,7 +96,7 @@ app.use((err, req, res, next) => {
   res.status(500).json({ error: 'Terjadi kesalahan internal pada server' });
 });
 
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`🚀 One Blood! API Server running on port ${PORT}`);
   console.log(`📡 Base URL: http://localhost:${PORT}/api`);
 
